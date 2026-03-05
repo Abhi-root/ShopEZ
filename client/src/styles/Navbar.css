@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+.float-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 70px;
+    z-index: 2000;
+    font-family: 'Outfit', sans-serif;
+}
+
+.nav-pill-container {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+/* Brand Logo */
+.nav-brand-bold {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+.nav-brand-bold span {
+    color: #ff3e3e;
+}
+
+/* Pill Search Bar */
+.nav-pill-search {
+    flex: 0.5;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-pill-search:focus-within {
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.nav-pill-search input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.pill-search-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #555;
+}
+
+.pill-search-error {
+    position: absolute;
+    top: 60px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    font-size: 0.8rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Icons & Actions */
+.nav-pill-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.pill-action-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.pill-icon {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.pill-user-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pill-cart-wrapper {
+    position: relative;
+}
+
+.pill-cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #ff3e3e;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.pill-login-btn {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Admin Styles */
+.admin-pill-group {
+    display: flex;
+    gap: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.admin-pill-group span { cursor: pointer; }
+
+.pill-logout-icon {
+    font-size: 1.2rem;
+    color: #ff3e3e;
+    cursor: pointer;
+}
+
+.nav-pill-spacer {
+    height: 100px;
+}

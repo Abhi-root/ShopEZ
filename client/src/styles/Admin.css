@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
+.admin-dashboard-modern {
+    background-color: #0f1113; /* Ultra Dark */
+    min-height: 100vh;
+    width: 100%;
+    padding: 120px 5% 50px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+}
+
+.admin-welcome-header {
+    margin-bottom: 50px;
+}
+
+.admin-welcome-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.admin-welcome-header h1 span {
+    color: #ff3e3e;
+    text-transform: uppercase;
+}
+
+.admin-welcome-header p {
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Stats Cards */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.stat-card-premium {
+    background: #1a1d21;
+    border: 1px solid #2d3238;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stat-card-premium:hover {
+    border-color: #ff3e3e;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 62, 62, 0.1);
+}
+
+.stat-card-premium h5 {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.stat-card-premium button {
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stat-card-premium button:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Banner Update Row */
+.admin-action-row {
+    width: 100%;
+}
+
+.banner-update-card {
+    background: #1a1d21;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #2d3238;
+}
+
+.banner-update-card h5 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.banner-update-card p {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.custom-input-group {
+    display: flex;
+    gap: 15px;
+    background: #0f1113;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #2d3238;
+}
+
+.custom-input-group input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.custom-input-group button {
+    background: #ff3e3e;
+    color: #fff;
+    border: none;
+    padding: 0 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.custom-input-group button:hover {
+    background: #e63535;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .custom-input-group { flex-direction: column; }
+}

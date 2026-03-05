@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;700&display=swap');
+
+.category-products-wrapper {
+    margin-top: 90px; /* Navbar height ke hisab se */
+    font-family: 'Outfit', sans-serif;
+    background-color: #fdfdfd;
+}
+
+/* Category Hero Section */
+.category-hero {
+    height: 300px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.category-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.category-hero-content h1 span {
+    color: #ff3e3e; /* Brand Red */
+}
+
+.category-hero-content p {
+    font-size: 1.1rem;
+    color: #bbb;
+    font-weight: 300;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #888;
+}
+
+.breadcrumb span {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.breadcrumb span:hover {
+    color: #ff3e3e;
+}
+
+/* Container spacing */
+.category-container {
+    min-height: 60vh;
+    padding-bottom: 50px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .category-hero { height: 200px; }
+    .category-hero-content h1 { font-size: 2.2rem; }
+    .category-hero-content p { font-size: 0.9rem; }
+}

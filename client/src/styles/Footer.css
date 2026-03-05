@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+.footer-modern {
+    background: #0a0a0a; /* Pure deep dark */
+    color: #ffffff;
+    padding: 80px 6% 30px;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 100px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-upper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-brand-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: #ff3e3e; /* Matching your theme red */
+}
+
+.footer-brand-section p {
+    color: #888;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    max-width: 300px;
+    margin-bottom: 25px;
+}
+
+/* Social Icons Pill */
+.social-links-pill {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.social-links-pill svg {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-links-pill svg:hover {
+    color: #ff3e3e;
+    transform: translateY(-3px);
+}
+
+/* Links Grid */
+.footer-grid-links {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+}
+
+.link-col h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.link-col ul {
+    padding: 0;
+    list-style: none;
+}
+
+.link-col ul li {
+    margin-bottom: 12px;
+    color: #777;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.link-col ul li:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+/* Newsletter Input */
+.newsletter-col p {
+    color: #777;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.footer-input-group {
+    display: flex;
+    background: #1a1a1a;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.footer-input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    flex: 1;
+}
+
+.footer-input-group button {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-input-group button:hover {
+    background: #ff3e3e;
+    color: #fff;
+}
+
+/* Bottom Bar */
+.footer-low {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 30px;
+    text-align: center;
+    color: #444;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-upper {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+.modern-cart-container {
+    padding: 140px 8% 60px;
+    font-family: 'Outfit', sans-serif;
+    background-color: #fafafb;
+    min-height: 100vh;
+}
+
+.cart-layout {
+    display: flex;
+    gap: 40px;
+}
+
+.cart-items-section {
+    flex: 2;
+}
+
+.cart-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.cart-header span {
+    color: #888;
+    font-size: 1rem;
+}
+
+/* Item Card */
+.modern-cart-item {
+    display: flex;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.modern-cart-item:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.item-img-container img {
+    width: 140px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.item-top h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.remove-icon {
+    cursor: pointer;
+    color: #999;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.remove-icon:hover { color: #ff3e3e; }
+
+.item-desc {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin: 10px 0;
+}
+
+.item-meta {
+    font-size: 0.9rem;
+    color: #444;
+    display: flex;
+    gap: 20px;
+}
+
+.item-price {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Summary Section */
+.cart-summary-section {
+    flex: 1;
+}
+
+.summary-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    position: sticky;
+    top: 120px;
+    border: 1px solid #eee;
+}
+
+.summary-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.discount-text { color: #079c6a; font-weight: 600; }
+.free-text { color: #079c6a; font-weight: 600; }
+
+.total-row {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    margin-top: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover { background: #333; }
+
+/* Modal & Form */
+.checkout-modal { border-radius: 20px; padding: 20px; }
+.modern-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+.row-inputs { display: flex; gap: 10px; }
+.place-order-final {
+    width: 100%;
+    background: #ff3e3e;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 100px 0;
+    color: #999;
+}
+.empty-cart button {
+    margin-top: 20px;
+    border: 1px solid #000;
+    background: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+/* Start Shopping Button Premium Fix */
+.start-shopping-btn {
+    margin-top: 25px !important;
+    background-color: #1a1a1a !important; /* Premium Black */
+    color: #ffffff !important;
+    padding: 16px 45px !important;
+    border: none !important;
+    border-radius: 14px !important; /* Modern Rounded Corners */
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease-in-out !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    display: inline-block !important;
+}
+
+/* Hover Effect */
+.start-shopping-btn:hover {
+    background-color: #ff3e3e !important; /* ShopEZ Red Accent */
+    transform: translateY(-4px) !important;
+    box-shadow: 0 15px 30px rgba(255, 62, 62, 0.3) !important;
+    color: #ffffff !important;
+}
+
+/* Container for Centering */
+.empty-cart-premium {
+    text-align: center !important;
+    padding: 100px 5% !important;
+    background: #fff !important;
+    border-radius: 24px !important;
+    border: 1px solid #eee !important;
+}
