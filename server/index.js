@@ -21,6 +21,17 @@ app.use(cors({
   origin: ['https://shop-ez-n6bv.vercel.app', 'http://localhost:3000', 'http://localhost:3025'],
   credentials: true
 }));
+
+app.options('*', cors({
+  origin: ['https://shop-ez-n6bv.vercel.app', 'http://localhost:3000', 'http://localhost:3025'],
+  credentials: true
+}));
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ message: 'Backend is running!' });
+});
+
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 

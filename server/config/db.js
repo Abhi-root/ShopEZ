@@ -9,8 +9,8 @@ const connectDB = async () => {
     });
     console.log('MongoDB connected');
   } catch (err) {
-    console.error(`Error in DB connection: ${err.message}`);
-    process.exit(1);
+    console.error(`Error in DB connection on startup: ${err.message}`);
+    console.error(`Please check if your MONGO_URI is set correctly in Vercel Environment Variables.`);
   }
 };
 
