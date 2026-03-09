@@ -23,13 +23,13 @@ const Admin = () => {
 
   const fetchCountData = async () => {
     try {
-      const users = await axios.get('http://localhost:6001/api/users/fetch-users');
+      const users = await axios.get('https://shop-ez-flame.vercel.app/api/users/fetch-users');
       setUserCount(users.data.length - 1);
       
-      const products = await axios.get('http://localhost:6001/api/products/fetch-products');
+      const products = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-products');
       setProductCount(products.data.length);
       
-      const orders = await axios.get('http://localhost:6001/api/orders/fetch-orders');
+      const orders = await axios.get('https://shop-ez-flame.vercel.app/api/orders/fetch-orders');
       setOrdersCount(orders.data.length);
     } catch (err) {
       console.log("Error fetching counts:", err);
@@ -39,7 +39,7 @@ const Admin = () => {
 const updateBanner = async () => {
   try {
     // URL routes file se match hona chahiye: /api/banners
-    await axios.post('http://localhost:6001/api/banners', { bannerUrl: banner });
+    await axios.post('https://shop-ez-flame.vercel.app/api/banners', { bannerUrl: banner });
     alert("Banner updated successfully!");
     setBanner('');
   } catch (err) {

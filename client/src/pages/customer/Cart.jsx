@@ -22,7 +22,7 @@ const Cart = () => {
   const fetchCart = async () => {
     try {
       const config = { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } };
-      const response = await axios.get('http://localhost:6001/api/cart/fetch-cart', config);
+      const response = await axios.get('https://shop-ez-flame.vercel.app/api/cart/fetch-cart', config);
       const items = Array.isArray(response.data) ? response.data : [];
       setCartItems(items);
       const count = items.reduce((acc, item) => acc + (parseInt(item.quantity) || 0), 0);
@@ -45,7 +45,7 @@ const Cart = () => {
   const removeItem = async (itemId) => {
     try {
       const config = { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } };
-      await axios.delete(`http://localhost:6001/api/cart/remove-item/${itemId}`, config);
+      await axios.delete(`https://shop-ez-flame.vercel.app/api/cart/remove-item/${itemId}`, config);
       fetchCart();
     } catch (err) { console.error(err); }
   };
@@ -53,7 +53,7 @@ const Cart = () => {
   const placeOrder = async () => {
     if (cartItems.length === 0) return;
     try {
-      await axios.post('http://localhost:6001/api/orders/place-cart-order', {
+      await axios.post('https://shop-ez-flame.vercel.app/api/orders/place-cart-order', {
         ...formData,
         userId: localStorage.getItem('userId'),
         orderDate: new Date(),

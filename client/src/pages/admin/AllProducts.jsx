@@ -14,11 +14,11 @@ const AllProducts = () => {
     }, [])
 
     const fetchData = async () => {
-        const prodRes = await axios.get('http://localhost:6001/api/products/fetch-products');
+        const prodRes = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-products');
         setProducts(prodRes.data);
         setVisibleProducts(prodRes.data);
 
-        const catRes = await axios.get('http://localhost:6001/api/products/fetch-categories');
+        const catRes = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-categories');
         setCategories(catRes.data);
     }
 

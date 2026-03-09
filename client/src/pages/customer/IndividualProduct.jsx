@@ -34,7 +34,7 @@ const IndividualProduct = () => {
 
     const fetchProduct = async () => {
         try {
-            const res = await axios.get(`http://localhost:6001/api/products/fetch-product-details/${id}`);
+            const res = await axios.get(`https://shop-ez-flame.vercel.app/api/products/fetch-product-details/${id}`);
             setProduct({
                 ...res.data,
                 carousel: res.data.carousel || []
@@ -53,7 +53,7 @@ const IndividualProduct = () => {
 
         try {
             await axios.post(
-                'http://localhost:6001/api/orders/buy-product',
+                'https://shop-ez-flame.vercel.app/api/orders/buy-product',
                 {
                     userId, name, email, mobile, address, pincode,
                     title: product.title, description: product.description,
@@ -84,7 +84,7 @@ const IndividualProduct = () => {
     const handleAddToCart = async () => {
         if (!size) return alert("Please select a size");
         try {
-            await axios.post('http://localhost:6001/api/cart/add-to-cart', { 
+            await axios.post('https://shop-ez-flame.vercel.app/api/cart/add-to-cart', { 
                 userId, title: product.title, description: product.description, 
                 mainImg: product.mainImg, size, quantity: productQuantity, 
                 price: product.price, discount: product.discount 

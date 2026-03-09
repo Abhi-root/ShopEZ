@@ -12,7 +12,7 @@ const AllOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get(`http://localhost:6001/api/orders/fetch-orders`);
+      const response = await axios.get(`https://shop-ez-flame.vercel.app/api/orders/fetch-orders`);
       setOrders(response.data.reverse());
     } catch (err) {
       console.error("Fetch orders failed:", err);
@@ -21,7 +21,7 @@ const AllOrders = () => {
 
   const cancelOrder = async (orderId) => {
     try {
-      const { data } = await axios.put('http://localhost:6001/api/orders/cancel-order', { orderId });
+      const { data } = await axios.put('https://shop-ez-flame.vercel.app/api/orders/cancel-order', { orderId });
       alert(data.message || "Order cancelled!!");
       fetchOrders();
     } catch (err) {
@@ -32,7 +32,7 @@ const AllOrders = () => {
   const updateOrderStatus = async (id) => {
     if (!updateStatus) return alert("Please select a status");
     try {
-      await axios.put('http://localhost:6001/api/orders/update-order-status', { id, updateStatus });
+      await axios.put('https://shop-ez-flame.vercel.app/api/orders/update-order-status', { id, updateStatus });
       alert("Order status updated!!");
       setUpdateStatus('');
       fetchOrders();

@@ -29,7 +29,7 @@ const UpdateProduct = () => {
 
     const fetchProduct = async () => {
         try {
-            const response = await axios.get(`http://localhost:6001/api/products/fetch-product-details/${id}`);
+            const response = await axios.get(`https://shop-ez-flame.vercel.app/api/products/fetch-product-details/${id}`);
             setProductName(response.data.title);
             setProductDescription(response.data.description);
             setProductMainImg(response.data.mainImg);
@@ -46,7 +46,7 @@ const UpdateProduct = () => {
 
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://localhost:6001/api/products/fetch-categories');
+            const response = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-categories');
             setAvailableCategories(response.data);
         } catch (err) { console.error(err); }
     }
@@ -68,7 +68,7 @@ const UpdateProduct = () => {
 
             // Request ke saath config (headers) bhejein
             await axios.delete(
-                `http://localhost:6001/api/products/delete-category/${productCategory}`, 
+                `https://shop-ez-flame.vercel.app/api/products/delete-category/${productCategory}`, 
                 config
             );
 
@@ -90,7 +90,7 @@ const UpdateProduct = () => {
 
     const handleUpdateProduct = async () => {
         try {
-            await axios.put(`http://localhost:6001/api/products/update-product/${id}`, {
+            await axios.put(`https://shop-ez-flame.vercel.app/api/products/update-product/${id}`, {
                 productName, productDescription, productMainImg,
                 productCarousel: [productCarouselImg1, productCarouselImg2, productCarouselImg3],
                 productSizes, productGender, productCategory, productNewCategory, productPrice, productDiscount

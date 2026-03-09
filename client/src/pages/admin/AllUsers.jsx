@@ -12,10 +12,10 @@ const AllUsers = () => {
 
   const fetchUsersData = async () => {
     try {
-      const userRes = await axios.get('http://localhost:6001/api/users/fetch-users');
+      const userRes = await axios.get('https://shop-ez-flame.vercel.app/api/users/fetch-users');
       setUsers(userRes.data.filter(user => user.usertype === 'customer'));
 
-      const orderRes = await axios.get('http://localhost:6001/api/orders/fetch-orders');
+      const orderRes = await axios.get('https://shop-ez-flame.vercel.app/api/orders/fetch-orders');
       setOrders(orderRes.data);
     } catch (err) {
       console.error("Error fetching users:", err);

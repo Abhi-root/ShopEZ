@@ -25,7 +25,7 @@ const NewProduct = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:6001/api/products/fetch-categories');
+      const response = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-categories');
       setAvailableCategories(response.data);
     } catch (err) {
       console.error("Category fetch failed");
@@ -39,7 +39,7 @@ const NewProduct = () => {
 
   const handleNewProduct = async () => {
     try {
-      await axios.post('http://localhost:6001/api/products/add-new-product', {
+      await axios.post('https://shop-ez-flame.vercel.app/api/products/add-new-product', {
         productName, productDescription, productMainImg,
         productCarousel: [productCarouselImg1, productCarouselImg2, productCarouselImg3],
         productSizes, productGender, productCategory, productNewCategory,

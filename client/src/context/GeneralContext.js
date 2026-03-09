@@ -34,7 +34,7 @@ const GeneralContextProvider = ({children}) => {
     const userId = localStorage.getItem('userId');
     if(userId){
       try {
-        const response = await axios.get('http://localhost:6001/api/cart/fetch-cart');
+        const response = await axios.get('https://shop-ez-flame.vercel.app/api/cart/fetch-cart');
         setCartCount(response.data.filter(item=> item.userId === userId).length);
       } catch (err) {
         console.error("Cart fetch error:", err);
@@ -61,7 +61,7 @@ const GeneralContextProvider = ({children}) => {
 
     try {
       const loginInputs = { email: email.trim(), password: password };
-      const res = await axios.post('http://localhost:6001/api/users/login', loginInputs);
+      const res = await axios.post('https://shop-ez-flame.vercel.app/api/users/login', loginInputs);
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data._id);
@@ -84,7 +84,7 @@ const GeneralContextProvider = ({children}) => {
   const register = async () =>{
     const inputs = {username, email, usertype, password};
     try {
-      const res = await axios.post('http://localhost:6001/api/users/register', inputs);
+      const res = await axios.post('https://shop-ez-flame.vercel.app/api/users/register', inputs);
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data._id);

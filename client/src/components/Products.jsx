@@ -20,7 +20,7 @@ const Products = (props) => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:6001/api/products/fetch-products');
+            const response = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-products');
             const allProducts = response.data;
             
             let initialFiltered = [];
@@ -35,7 +35,7 @@ const Products = (props) => {
             setProducts(initialFiltered);
             setVisibleProducts(initialFiltered);
 
-            const catRes = await axios.get('http://localhost:6001/api/products/fetch-categories');
+            const catRes = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-categories');
             setCategories(catRes.data);
         } catch (err) {
             console.error("Error fetching data:", err);
