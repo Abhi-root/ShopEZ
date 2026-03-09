@@ -17,7 +17,10 @@ const app = express();
 const PORT = 6001;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ['https://shop-ez-n6bv.vercel.app', 'http://localhost:3000', 'http://localhost:3025'],
+  credentials: true
+}));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
