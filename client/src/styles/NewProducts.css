@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+.new-product-page {
+    background-color: #0f1113;
+    min-height: 100vh;
+    padding: 120px 5% 50px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.entry-card {
+    background: #1a1d21;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 24px;
+    border: 1px solid #2d3238;
+    padding: 40px;
+    height: fit-content;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.entry-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.entry-header h3 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.entry-header h3 span { color: #ff3e3e; }
+.entry-header p { color: #888; font-size: 0.9rem; }
+
+.entry-scroll-body {
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 15px;
+    margin-bottom: 30px;
+}
+
+.entry-scroll-body::-webkit-scrollbar { width: 5px; }
+.entry-scroll-body::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+.entry-section {
+    margin-bottom: 35px;
+}
+
+.entry-section h6 {
+    color: #ff3e3e;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Modern Input Styling */
+.input-row, .input-row-3 {
+    display: flex;
+    gap: 20px;
+}
+
+.input-row-3 > div { flex: 1; }
+
+.modern-field {
+    position: relative;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.modern-field input, .modern-field select {
+    width: 100%;
+    background: #0f1113;
+    border: 1px solid #2d3238;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.modern-field label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modern-field input:focus ~ label, 
+.modern-field input:valid ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.75rem;
+    color: #ff3e3e;
+    background: #1a1d21;
+    padding: 0 5px;
+}
+
+.modern-field input:focus { border-color: #ff3e3e; }
+
+/* Selection Pills */
+.check-grid, .radio-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.pill-check, .pill-radio {
+    cursor: pointer;
+}
+
+.pill-check input, .pill-radio input { display: none; }
+
+.pill-check span, .pill-radio span {
+    padding: 10px 25px;
+    border: 1px solid #2d3238;
+    border-radius: 10px;
+    display: block;
+    color: #888;
+    transition: 0.3s;
+}
+
+.pill-check input:checked + span, 
+.pill-radio input:checked + span {
+    background: #ff3e3e;
+    color: #fff;
+    border-color: #ff3e3e;
+}
+
+.submit-entry-btn {
+    width: 100%;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-entry-btn:hover {
+    background: #ff3e3e;
+    color: #fff;
+    transform: translateY(-3px);
+}

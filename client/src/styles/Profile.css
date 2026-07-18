@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+.profilePage {
+    margin-top: 12vh;
+    display: flex;
+    gap: 30px;
+    padding: 40px 5%;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Left Sidebar Card */
+.profileCard {
+    width: 25%;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    height: fit-content;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    text-align: center;
+    position: sticky;
+    top: 100px;
+}
+
+.profileCard span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.profileCard h5 {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+    font-weight: 500;
+}
+
+.profileCard p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+}
+
+.profileCard .btn-danger {
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+    background-color: #ff3e3e;
+    border: none;
+    transition: 0.3s;
+}
+
+/* Right Orders Container */
+.profileOrders-container {
+    width: 70%;
+}
+
+.profileOrders-container h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+}
+
+.profileOrders {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual Order Card */
+.profileOrder {
+    display: flex;
+    gap: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    position: relative;
+}
+
+.profileOrder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.profileOrder img {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profileOrder-data {
+    flex: 1;
+}
+
+.profileOrder-data h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profileOrder-data p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.profileOrder-data div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.profileOrder-data span p {
+    font-size: 0.85rem;
+    color: #444;
+    margin: 0;
+}
+
+.profileOrder-data b {
+    color: #999;
+    font-weight: 500;
+}
+
+/* Order Status Tags */
+.profileOrder-data span:last-child p {
+    background: #f0f7ff;
+    color: #007bff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* Cancel Button Styling */
+.profileOrder-data .btn-danger {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    padding: 6px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .profilePage { flex-direction: column; }
+    .profileCard, .profileOrders-container { width: 100%; }
+    .profileCard { position: static; }
+}

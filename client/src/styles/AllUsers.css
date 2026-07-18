@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+.users-management-container {
+    background-color: #0f1113;
+    min-height: 100vh;
+    padding: 120px 6% 50px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+}
+
+.admin-section-header {
+    margin-bottom: 40px;
+    border-left: 4px solid #ff3e3e;
+    padding-left: 20px;
+}
+
+.admin-section-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.admin-section-header h3 span { color: #ff3e3e; }
+
+.admin-section-header p { color: #888; font-size: 0.9rem; }
+
+.users-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Custom Scrollbar */
+.users-list-wrapper::-webkit-scrollbar { width: 4px; }
+.users-list-wrapper::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+.user-profile-card {
+    background: #1a1d21;
+    border: 1px solid #2d3238;
+    border-radius: 20px;
+    padding: 25px 35px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    transition: 0.3s;
+}
+
+.user-profile-card:hover {
+    border-color: #ff3e3e;
+    transform: translateX(10px);
+    background: #1d2024;
+}
+
+.user-avatar-section {
+    flex: 0 0 70px;
+}
+
+.user-initial-circle {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff3e3e 0%, #b32a2a 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    box-shadow: 0 8px 15px rgba(255, 62, 62, 0.2);
+}
+
+.user-info-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 0.8fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-info-item label {
+    display: block;
+    font-size: 0.65rem;
+    color: #ff3e3e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.user-info-item p {
+    color: #eee;
+    font-size: 0.95rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.order-count-pill {
+    background: #ffffff10;
+    border: 1px solid #ffffff20;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Highlight Stat on Hover */
+.user-profile-card:hover .order-count-pill {
+    background: #ff3e3e;
+    border-color: #ff3e3e;
+}
+
+@media (max-width: 1000px) {
+    .user-info-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .user-profile-card { flex-direction: column; text-align: center; gap: 20px; }
+    .user-avatar-section { flex: none; }
+}

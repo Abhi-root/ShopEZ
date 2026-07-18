@@ -1,0 +1,53 @@
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import connectDB from "./config/db.js";
+
+import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import dotenv from "dotenv";
+import bannerRoutes from "./routes/bannerRoutes.js";
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT||3000;
+
+app.use(express.json());
+app.use(cors({
+  origin: ['https://shop-ez-n6bv.vercel.app', 'http://localhost:3000'],
+  credentials: true
+}));
+
+app.options('*', cors({
+  origin: ['https://shop-ez-n6bv.vercel.app', 'http://localhost:3000'],
+  credentials: true
+}));
+
+
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ message: 'Backend is running!' });
+});
+
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+
+
+app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/cart", cartRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/banners", bannerRoutes);
+
+
+connectDB();
+
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+export default app;
