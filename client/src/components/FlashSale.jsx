@@ -2,7 +2,6 @@ import React from 'react'
 import '../styles/FlashSale.css';
 
 const FlashSale = () => {
-  // Using an array to keep code clean and repeatable
   const products = [1, 2, 3, 4, 5, 6];
 
   return (

@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useContext } from 'react' // useContext add kiya
+import React, { useEffect, useState, useContext } from 'react' 
 import '../styles/Products.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { GeneralContext } from '../context/GeneralContext'; // Context import kiya
+import { GeneralContext } from '../context/GeneralContext'; 
 
 const Products = (props) => {
     const navigate = useNavigate();
     
-    // Global search query access kiya
+  
     const { searchQuery } = useContext(GeneralContext);
 
     const [categories, setCategories] = useState([]);
@@ -66,11 +66,11 @@ const Products = (props) => {
         setVisibleProducts(sorted);
     }
 
-    // Advanced Filtering logic including Search Query
+
     useEffect(() => {
         let refined = products;
 
-        // 1. Search Filter: Title aur Category dono check karta hai
+  
         if (searchQuery) {
             refined = refined.filter(p => 
                 p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -78,12 +78,12 @@ const Products = (props) => {
             );
         }
 
-        // 2. Sidebar Category Filter
+        
         if (categoryFilter.length > 0) {
             refined = refined.filter(p => categoryFilter.includes(p.category));
         }
 
-        // 3. Gender Filter
+       
         if (genderFilter.length > 0) {
             refined = refined.filter(p => genderFilter.includes(p.gender));
         }

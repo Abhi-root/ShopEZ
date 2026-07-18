@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { HiOutlineSearch, HiOutlineShoppingBag } from 'react-icons/hi'
 import { RiUserSharedLine, RiShutDownLine } from 'react-icons/ri'
 import '../styles/Navbar.css'
 import { useNavigate } from 'react-router-dom'
 import { GeneralContext } from '../context/GeneralContext'
-import { ImCancelCircle } from 'react-icons/im'
 import axios from 'axios'
 
 const Navbar = () => {
@@ -12,7 +11,7 @@ const Navbar = () => {
   const usertype = localStorage.getItem('userType');
   const username = localStorage.getItem('username');
   
-  // Context se searchQuery aur setSearchQuery nikaalein
+  
   const { cartCount, logout, setSearchQuery } = useContext(GeneralContext);
 
   const [productSearch, setProductSearch] = useState('');
@@ -31,17 +30,16 @@ const Navbar = () => {
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
     setProductSearch(query);
-    setSearchQuery(query); // Global state update karein taaki Products.jsx filter kar sake
+    setSearchQuery(query); 
   };
 
   const executeSearch = () => {
-    // Agar input exact category name hai, toh navigate karein
+  
     const matchedCategory = categories.find(cat => cat.toLowerCase() === productSearch.toLowerCase());
     
     if (matchedCategory) {
       navigate(`/category/${matchedCategory}`);
     } else {
-      // Warna Home page par hi Products filter honge
       navigate('/');
     }
   };
@@ -59,7 +57,7 @@ const Navbar = () => {
                 placeholder='Search electronics, sports, fashion...' 
                 value={productSearch}
                 onChange={handleSearch} 
-                onKeyDown={(e) => e.key === 'Enter' && executeSearch()} // Enter dabane par search
+                onKeyDown={(e) => e.key === 'Enter' && executeSearch()} 
               />
               <HiOutlineSearch className="pill-search-icon" onClick={executeSearch} />
             </div>

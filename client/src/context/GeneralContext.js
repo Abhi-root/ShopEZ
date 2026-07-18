@@ -42,17 +42,16 @@ const GeneralContextProvider = ({children}) => {
     }
   }
 
-  // Search handling logic
   const handleSearch = () =>{
-    // Agar user home page par nahi hai, toh use home bhej dein search results ke liye
+    
     navigate('/'); 
-    // Scroll to products section if needed
+  
     setTimeout(() => {
         window.scrollTo({top: 600, behavior: 'smooth'});
     }, 100);
   }
 
-  // 🟢 LOGIN
+ 
   const login = async () => {
     if (!email || !password) {
       alert("Email and password are required!");
@@ -74,13 +73,13 @@ const GeneralContextProvider = ({children}) => {
       } else if (res.data.usertype === 'admin') {
         navigate('/admin');
       }
-      fetchCartCount(); // Login ke baad cart update karein
+      fetchCartCount(); 
     } catch (err) {
       alert(err.response?.data?.message || "Login failed!!");
     }
   };
 
-  // 🟢 REGISTER
+
   const register = async () =>{
     const inputs = {username, email, usertype, password};
     try {
@@ -103,7 +102,7 @@ const GeneralContextProvider = ({children}) => {
     }
   }
 
-  // 🟢 LOGOUT
+
   const logout = () =>{
     localStorage.clear();
     setCartCount(0); // Cart clear karein UI mein
@@ -119,7 +118,7 @@ const GeneralContextProvider = ({children}) => {
         email, setEmail,
         password, setPassword,
         usertype, setUsertype,
-        searchQuery, setSearchQuery, // Ab Products.jsx is 'searchQuery' ko access kar payega
+        searchQuery, setSearchQuery, 
         handleSearch,
         cartCount, setCartCount,
         fetchCartCount  
