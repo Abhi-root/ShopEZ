@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import { HiOutlineSearch, HiOutlineShoppingBag } from 'react-icons/hi'
 import { RiUserSharedLine, RiShutDownLine } from 'react-icons/ri'
 import '../styles/Navbar.css'
