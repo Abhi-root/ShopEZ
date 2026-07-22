@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react' 
+import React, { useEffect, useState, useContext,useCallback} from 'react' 
 import '../styles/Products.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +18,7 @@ const Products = (props) => {
         fetchData();
     }, [props.category]); 
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             const response = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-products');
             const allProducts = response.data;
@@ -40,7 +40,7 @@ const Products = (props) => {
         } catch (err) {
             console.error("Error fetching data:", err);
         }
-    }
+    })
 
     const [sortFilter, setSortFilter] = useState('popularity');
     const [categoryFilter, setCategoryFilter] = useState([]);

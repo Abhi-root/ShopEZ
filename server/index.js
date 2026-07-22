@@ -18,12 +18,12 @@ const PORT = process.env.PORT||3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://shop-ez-n6bv.vercel.app', 'http://localhost:3000'],
+  origin: ['https://shopez-1-4ul1.onrender.com/', 'http://localhost:3000'],
   credentials: true
 }));
 
 app.options('*', cors({
-  origin: ['https://shop-ez-n6bv.vercel.app', 'http://localhost:3000'],
+  origin: ['https://shopez-1-4ul1.onrender.com/', 'http://localhost:3000'],
   credentials: true
 }));
 
