@@ -19,7 +19,7 @@ const Profile = () => {
   },[])
 
   const fetchOrders = async () =>{
-    await axios.get(`https://shop-ez-flame.vercel.app/api/orders/fetch-orders`).then(
+    await axios.get(`https://shopez-2-6e3z.onrender.com/api/orders/fetch-orders`).then(
       (response)=>{
         setOrders(response.data.reverse());
       }
@@ -35,7 +35,7 @@ const cancelOrder = async (orderId) => {
 
   try {
     const { data } = await axios.put(
-      "https://shop-ez-flame.vercel.app/api/orders/cancel-order",
+      "https://shopez-2-6e3z.onrender.com/api/orders/cancel-order",
       { orderId } // sending orderId in request body
     );
 
