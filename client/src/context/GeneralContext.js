@@ -30,17 +30,23 @@ const GeneralContextProvider = ({children}) => {
     fetchCartCount();
   }, []);
 
-  const fetchCartCount = async () =>{
-    const userId = localStorage.getItem('userId');
-    if(userId){
-      try {
-        await axios.get('https://shopez-2-6e3z.onrender.com/api/cart/fetch-cart');
-        setCartCount(response.data.filter(item=> item.userId === userId).length);
-      } catch (err) {
-        console.error("Cart fetch error:", err);
-      }
+const fetchCartCount = async () => {
+  const userId = localStorage.getItem("userId");
+
+  if (userId) {
+    try {
+      const response = await axios.get(
+        "https://shopez-2-6e3z.onrender.com/api/cart/fetch-cart"
+      );
+
+      setCartCount(
+        response.data.filter(item => item.userId === userId).length
+      );
+    } catch (err) {
+      console.error("Cart fetch error:", err);
     }
   }
+};
 
   const handleSearch = () =>{
     
