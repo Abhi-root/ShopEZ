@@ -20,7 +20,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-categories');
+        const response = await axios.get('https://shopez-2-6e3z.onrender.com/api/products/fetch-categories');
         setCategories(response.data);
       } catch (err) { console.log(err); }
     };

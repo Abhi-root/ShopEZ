@@ -12,6 +12,7 @@ const Products = (props) => {
 
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
+
     const [visibleProducts, setVisibleProducts] = useState([]);
 
     useEffect(() => {
@@ -20,7 +21,7 @@ const Products = (props) => {
 
     const fetchData = useCallback(async () => {
         try {
-            const response = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-products');
+            const response = await axios.get('https://shopez-2-6e3z.onrender.com/api/products/fetch-products');
             const allProducts = response.data;
             
             let initialFiltered = [];
@@ -35,7 +36,7 @@ const Products = (props) => {
             setProducts(initialFiltered);
             setVisibleProducts(initialFiltered);
 
-            const catRes = await axios.get('https://shop-ez-flame.vercel.app/api/products/fetch-categories');
+            const catRes = await axios.get('https://shopez-2-6e3z.onrender.com/api/products/fetch-categories');
             setCategories(catRes.data);
         } catch (err) {
             console.error("Error fetching data:", err);

@@ -16,7 +16,7 @@ const Home = () => {
 
   const fetchBanner = async () => {
     try {
-      const response = await axios.get("https://shop-ez-flame.vercel.app/api/banners");
+      const response = await axios.get("https://shopez-2-6e3z.onrender.com/api/banners");
       // Check karein ki array mein data hai ya nahi
       if (response.data && response.data.length > 0) {
         // Sirf pehle banner ka URL extract karein
