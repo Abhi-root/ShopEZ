@@ -13,11 +13,11 @@ const GeneralContextProvider = ({children}) => {
   const [password, setPassword] = useState('');
   const [usertype, setUsertype] = useState('');
 
-  // Search State: Ise hum searchQuery kahenge jo Products.jsx use karega
+
   const [searchQuery, setSearchQuery] = useState(''); 
   const [cartCount, setCartCount] = useState(0);
 
-  // 🔒 Axios interceptor to always attach JWT if exists
+  
   axios.interceptors.request.use((config) => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -34,7 +34,7 @@ const GeneralContextProvider = ({children}) => {
     const userId = localStorage.getItem('userId');
     if(userId){
       try {
-        const response = await axios.get('https://shop-ez-flame.vercel.app/api/cart/fetch-cart');
+        await axios.get('https://shopez-2-6e3z.onrender.com/api/cart/fetch-cart');
         setCartCount(response.data.filter(item=> item.userId === userId).length);
       } catch (err) {
         console.error("Cart fetch error:", err);
@@ -60,7 +60,7 @@ const GeneralContextProvider = ({children}) => {
 
     try {
       const loginInputs = { email: email.trim(), password: password };
-      const res = await axios.post('https://shop-ez-flame.vercel.app/api/users/login', loginInputs);
+      const res = await axios.post('https://shopez-2-6e3z.onrender.com/api/users/login', loginInputs);
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data._id);
@@ -83,7 +83,7 @@ const GeneralContextProvider = ({children}) => {
   const register = async () =>{
     const inputs = {username, email, usertype, password};
     try {
-      const res = await axios.post('https://shop-ez-flame.vercel.app/api/users/register', inputs);
+      const res = await axios.post('https://shopez-2-6e3z.onrender.com/api/users/register', inputs);
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data._id);
@@ -105,8 +105,8 @@ const GeneralContextProvider = ({children}) => {
 
   const logout = () =>{
     localStorage.clear();
-    setCartCount(0); // Cart clear karein UI mein
-    setSearchQuery(''); // Search clear karein
+    setCartCount(0); 
+    setSearchQuery(''); 
     navigate('/');
   }
 
