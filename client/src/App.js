@@ -24,7 +24,7 @@ function App() {
 
   const fetchCart = async () => {
     try {
-      const { data } = await axios.get("https://shop-ez-flame.vercel.app/api/cart/fetch-cart");
+      const { data } = await axios.get("https://shopez-2-6e3z.onrender.com");
       setCartItems(data);
     } catch (err) {
       console.error("Error fetching cart:", err);
