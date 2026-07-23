@@ -18,13 +18,19 @@ const PORT = process.env.PORT||3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://shopez-1-4ul1.onrender.com/', 'http://localhost:3000'],
-  credentials: true
+  origin: [
+  "https://shopez-1-4ul1.onrender.com",
+  "http://localhost:3000"
+],
+credentials: true
 }));
 
 app.options('*', cors({
-  origin: ['https://shopez-1-4ul1.onrender.com/', 'http://localhost:3000'],
-  credentials: true
+ origin: [
+  "https://shopez-1-4ul1.onrender.com",
+  "http://localhost:3000"
+],
+credentials: true
 }));
 
 
@@ -46,8 +52,8 @@ app.use("/api/banners", bannerRoutes);
 
 connectDB();
 
-if (process.env.NODE_ENV !== "production") {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 export default app;
