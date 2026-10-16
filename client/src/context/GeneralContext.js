@@ -36,7 +36,7 @@ const fetchCartCount = async () => {
   if (userId) {
     try {
       const response = await axios.get(
-        "https://shopez-2-6e3z.onrender.com/api/cart/fetch-cart"
+        "https://shopez-jlvt.onrender.com/api/cart/fetch-cart"
       );
 
       setCartCount(
@@ -66,7 +66,7 @@ const fetchCartCount = async () => {
 
     try {
       const loginInputs = { email: email.trim(), password: password };
-      const res = await axios.post('https://shopez-2-6e3z.onrender.com/api/users/login', loginInputs);
+      const res = await axios.post('https://shopez-jlvt.onrender.com/api/users/login', loginInputs);
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data._id);
@@ -89,7 +89,7 @@ const fetchCartCount = async () => {
   const register = async () =>{
     const inputs = {username, email, usertype, password};
     try {
-      const res = await axios.post('https://shopez-2-6e3z.onrender.com/api/users/register', inputs);
+      const res = await axios.post('https://shopez-jlvt.onrender.com/api/users/register', inputs);
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data._id);
