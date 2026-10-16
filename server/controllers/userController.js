@@ -26,9 +26,14 @@ export const registerUser = async (req, res) => {
       usertype: userCreated.usertype,
       token
     });
-  } catch (err) {
-    res.status(500).json({ message: 'Server Error' });
-  }
+   } 
+  //catch (err) {
+  //   res.status(500).json({ message: 'Server Error' });
+  // }
+   catch (err) {
+  console.error("Login Error:", err);
+  res.status(500).json({ message: 'Server Error' });
+}
 };
 
 export const loginUser = async (req, res) => {
